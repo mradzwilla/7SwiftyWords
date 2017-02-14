@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27F282591E52A369001BF222 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 27F282581E52A369001BF222 /* level2.txt */; };
 		43F1D3691E522C4600163BE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F1D3681E522C4600163BE0 /* AppDelegate.swift */; };
 		43F1D36B1E522C4600163BE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F1D36A1E522C4600163BE0 /* ViewController.swift */; };
 		43F1D36E1E522C4600163BE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F1D36C1E522C4600163BE0 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27F282581E52A369001BF222 /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
 		43F1D3651E522C4600163BE0 /* 7SwiftyWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 7SwiftyWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F1D3681E522C4600163BE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43F1D36A1E522C4600163BE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				43F1D3711E522C4600163BE0 /* LaunchScreen.storyboard */,
 				43F1D3741E522C4600163BE0 /* Info.plist */,
 				43F1D37A1E526CB200163BE0 /* level1.txt */,
+				27F282581E52A369001BF222 /* level2.txt */,
 			);
 			path = 7SwiftyWords;
 			sourceTree = "<group>";
@@ -126,6 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F282591E52A369001BF222 /* level2.txt in Resources */,
 				43F1D3731E522C4600163BE0 /* LaunchScreen.storyboard in Resources */,
 				43F1D37B1E526CB200163BE0 /* level1.txt in Resources */,
 				43F1D3701E522C4600163BE0 /* Assets.xcassets in Resources */,
@@ -303,6 +307,7 @@
 				43F1D3791E522C4600163BE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

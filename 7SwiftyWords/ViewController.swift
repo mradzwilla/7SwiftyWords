@@ -16,19 +16,48 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentAnswer: UITextField!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBAction func submitTapped(_ sender: UIButton) {
+        if let solutionPosition = solutions.index(of: currentAnswer.text!) {
+            activatedButtons.removeAll()
+            
+            var splitClues = answersLabel.text!.components(separatedBy: "\n")
+            splitClues[solutionPosition] = currentAnswer.text!
+            answersLabel.text = splitClues.joined(separator: "\n")
+            
+            currentAnswer.text = ""
+            score += 1
+            
+            if score % 7 == 0 {
+                let ac = UIAlertController(title: "Well done!", message: "Are you ready for the next level?", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Let's go!", style: .default, handler: levelUp))
+                present(ac, animated: true)
+            }
+        }
     }
     @IBAction func clearTapped(_ sender: UIButton) {
+        currentAnswer.text = ""
+        for btn in activatedButtons {
+            btn.isHidden = false
+        }
+        activatedButtons.removeAll()
     }
     
     var letterButtons = [UIButton]()
     var activatedButtons = [UIButton]()
     var solutions = [String]()
     
-    var score = 0
     var level = 1
+    var score: Int = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
     
     func letterTapped(btn: UIButton) {
+        currentAnswer.text = currentAnswer.text! + btn.titleLabel!.text!
+        activatedButtons.append(btn)
+        btn.isHidden = true
     }
+    
     func loadLevel() {
         var clueString = ""
         var solutionString = ""
@@ -65,6 +94,17 @@ class ViewController: UIViewController {
             for i in 0 ..< letterBits.count {
                 letterButtons[i].setTitle(letterBits[i], for: .normal)
             }
+        }
+    }
+    
+    func levelUp(action: UIAlertAction) {
+        level += 1
+        solutions.removeAll(keepingCapacity: true)
+        
+        loadLevel()
+        
+        for btn in letterButtons {
+            btn.isHidden = false
         }
     }
     
